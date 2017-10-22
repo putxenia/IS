@@ -1,0 +1,23 @@
+Button CalculateCharacters = new Button(shell, SWT.PUSH); //создаем кнопку подсчета 
+CalculateCharacters.setText("Подсчитать количество"); //вводим текст в объект 
+
+Button ClearCharacters = new Button(shell, SWT.PUSH); // создаем кнопку очистки 
+ClearCharacters.setText("Очистить текст"); //вводим текст в объект 
+
+
+CalculateCharacters.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() //добавление прослушки события 
+{ 
+public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) //в случае нажатии кнопки 
+{ 
+int NumberCharacters=0; //количество символов =0 
+for(int n=0;n<InputText.getText().length();n++) //цикл по всей строке 
+{ 
+if(InputText.getText().charAt(n)=='\n') //если встречаем перевод строки - уменьшаем счетчик символов на 1 ( т. к. перевод строки считается за два символа) 
+{ 
+NumberCharacters--; //уменьшаем счетчик символов на 1 
+} 
+NumberCharacters++; //инкреминтируем счетчик символов 
+} 
+Result.setText(Integer.toString(NumberCharacters)); //выводим результат на экран 
+} 
+});
