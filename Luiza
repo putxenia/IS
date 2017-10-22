@@ -1,0 +1,24 @@
+GridData gridData3 = new GridData();//создаем дополнительный слой 
+gridData3.horizontalAlignment = GridData.FILL;// устаналиваем тип заливки по горизонтали 
+gridData3.horizontalSpan = 3;//количество столбцов =3 
+//gridData3.heightHint = 50; 
+
+GridData gridDataText = new GridData(); //создаем дополнительный слой 
+gridDataText.horizontalSpan = 3;//количество столбцов =3 
+gridDataText.verticalAlignment = GridData.FILL; // устаналиваем тип заливки по вертикали 
+gridDataText.grabExcessVerticalSpace = true; //указываем зависимость размера элемента от родительского элемента 
+gridDataText.horizontalAlignment=GridData.FILL; // устаналиваем тип заливки по горизонтали 
+gridDataText.grabExcessHorizontalSpace=true; //указываем зависимость размера элемента от родительского элемента 
+
+Label LabelHeader=new Label(shell,SWT.NULL); //создаем объект label 
+LabelHeader.setText("Введите текст"); //вводим текст в объект 
+LabelHeader.setLayoutData(gridData3); // вставляет в нужный слой 
+
+final Text InputText=new Text(shell,SWT.MULTI | SWT.V_SCROLL ); //создаем поля для ввода текста 
+InputText.setLayoutData(gridDataText); // вставляет в нужный слой 
+
+Label LabelCharacters=new Label(shell,SWT.NULL); //создаем объект label 
+LabelCharacters.setText("Символов"); //вводим текст в объект 
+
+final Label Result=new Label(shell,SWT.NULL); //создаем объект label 
+Result.setLayoutData(gridData2); // вставляет в нужный слой
