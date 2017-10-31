@@ -1,4 +1,5 @@
 package rs; 
+
 import org.eclipse.swt.*; //подключение библиотеки swt, которая включает в себя элементы управления графическими приложениями и ее компонентов 
 import org.eclipse.swt.graphics.*; 
 import org.eclipse.swt.widgets.*; 
